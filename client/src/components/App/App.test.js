@@ -1,9 +1,15 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from 'react'
+import renderer from 'react-test-renderer'
+import serializer from 'jest-emotion'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+import App from './App'
+
+expect.addSnapshotSerializer(serializer)
+
+describe('renders app', () => {
+  it('Snapshot', () => {
+    const component = renderer.create(<App />)
+    const tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})
