@@ -7,15 +7,15 @@ import theme from '../../styles/theme/theme'
 
 import { Root } from './App.shards'
 
+import ChatApp from '../ChatApp/ChatApp'
+
 function App() {
   return (
     <>
-      <Global
-        styles={globalStyles}
-      />
+      <Global styles={globalStyles} />
       <ThemeProvider theme={theme}>
         <Root>
-          asd
+          <ChatApp />
         </Root>
       </ThemeProvider>
     </>
