@@ -32,6 +32,10 @@ const base = css`
       text-decoration: underline;
     }
   }
+
+  p, ul, li {
+    margin: 0;
+  }
 `
 
 export default css`

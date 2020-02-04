@@ -23,5 +23,6 @@ export const text = {
 
 export const border = {
   input: _colorGrey56,
-  chat: _colorGrey89
+  chat: _colorGrey89,
+  transparent: 'transparent',
 }

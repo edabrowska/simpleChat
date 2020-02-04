@@ -1,10 +1,12 @@
 import React from 'react'
 
-import { Root, Header } from './ChatApp.shards'
+import { ChatAppRoot, Header } from './ChatApp.shards'
 
-const ChatApp = ({ title = 'Status meeting standup' }) => <Root>
+import Tabs from '../Tabs/Tabs'
+
+const ChatApp = ({ title = 'Status meeting standup' }) => <ChatAppRoot>
   <Header>{title}</Header>
-  tabs
-</Root>
+  <Tabs />
+</ChatAppRoot>
 
 export default ChatApp
