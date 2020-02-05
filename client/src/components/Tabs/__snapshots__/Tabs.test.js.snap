@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Tabs Snapshot 1`] = `
-.emotion-5 {
+.emotion-6 {
   width: 100%;
 }
 
@@ -79,18 +79,33 @@ exports[`renders Tabs Snapshot 1`] = `
   opacity: .9;
 }
 
-.emotion-3 {
+.emotion-7 {
   display: none;
   display: block;
   width: 100%;
 }
 
-.emotion-4 {
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+  padding: 0 40px;
+  border-bottom: 1px solid #e1e3e5;
+}
+
+.emotion-8 {
   display: none;
 }
 
 <section
-  className="emotion-5"
+  className="emotion-6"
 >
   <div
     className="emotion-2"
@@ -110,12 +125,30 @@ exports[`renders Tabs Snapshot 1`] = `
   </div>
   <div>
     <div
-      className="emotion-3"
+      className="emotion-7"
     >
-      asd1
+      <section
+        className="emotion-6"
+      >
+        <div
+          className="emotion-3"
+        >
+          John Doe
+        </div>
+        <div
+          className="emotion-3"
+        >
+          Jane Smith
+        </div>
+        <div
+          className="emotion-3"
+        >
+          Elon Musk
+        </div>
+      </section>
     </div>
     <div
-      className="emotion-4"
+      className="emotion-8"
     >
       asd2
     </div>

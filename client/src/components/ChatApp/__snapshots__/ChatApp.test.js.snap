@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders ChatApp Snapshot 1`] = `
-.emotion-7 {
+.emotion-11 {
   width: 100%;
   height: 100%;
   overflow: auto;
 }
 
 @media (min-width:768px) {
-  .emotion-7 {
+  .emotion-11 {
     width: 720px;
     height: 1800px;
   }
@@ -31,7 +31,7 @@ exports[`renders ChatApp Snapshot 1`] = `
   background-color: #ebebeb;
 }
 
-.emotion-6 {
+.emotion-7 {
   width: 100%;
 }
 
@@ -109,18 +109,33 @@ exports[`renders ChatApp Snapshot 1`] = `
   opacity: .9;
 }
 
-.emotion-4 {
+.emotion-8 {
   display: none;
   display: block;
   width: 100%;
 }
 
-.emotion-5 {
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+  padding: 0 40px;
+  border-bottom: 1px solid #e1e3e5;
+}
+
+.emotion-9 {
   display: none;
 }
 
 <div
-  className="emotion-7"
+  className="emotion-11"
 >
   <header
     className="emotion-0"
@@ -128,7 +143,7 @@ exports[`renders ChatApp Snapshot 1`] = `
     Status meeting standup
   </header>
   <section
-    className="emotion-6"
+    className="emotion-7"
   >
     <div
       className="emotion-3"
@@ -148,12 +163,30 @@ exports[`renders ChatApp Snapshot 1`] = `
     </div>
     <div>
       <div
-        className="emotion-4"
+        className="emotion-8"
       >
-        asd1
+        <section
+          className="emotion-7"
+        >
+          <div
+            className="emotion-4"
+          >
+            John Doe
+          </div>
+          <div
+            className="emotion-4"
+          >
+            Jane Smith
+          </div>
+          <div
+            className="emotion-4"
+          >
+            Elon Musk
+          </div>
+        </section>
       </div>
       <div
-        className="emotion-5"
+        className="emotion-9"
       >
         asd2
       </div>

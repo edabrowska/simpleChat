@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 
 import { TabsRoot, TabHeader, TabTitle, TabContent } from './Tabs.shards'
 
+import Participants from '../Participants/Participants'
+
 const getTabs = (participantsCount) => [
   {
     name: `Participants ${participantsCount}`,
-    content: 'asd1'
+    content: <Participants />
   },
   {
     name: 'Chat',
