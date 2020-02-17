@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Tabs Snapshot 1`] = `
-.emotion-6 {
+.emotion-4 {
   width: 100%;
 }
 
@@ -79,7 +79,7 @@ exports[`renders Tabs Snapshot 1`] = `
   opacity: .9;
 }
 
-.emotion-7 {
+.emotion-5 {
   display: none;
   display: block;
   width: 100%;
@@ -95,17 +95,28 @@ exports[`renders Tabs Snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  height: 120px;
-  padding: 0 40px;
+  padding: 10px 40px;
   border-bottom: 1px solid #e1e3e5;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: none;
 }
 
+.emotion-8 {
+  width: 100%;
+  padding: 10px 40px;
+}
+
+.emotion-6 {
+  width: 100%;
+  padding: 10px 29px;
+  border: 1px solid #868c97;
+  border-radius: 5px;
+}
+
 <section
-  className="emotion-6"
+  className="emotion-4"
 >
   <div
     className="emotion-2"
@@ -114,7 +125,7 @@ exports[`renders Tabs Snapshot 1`] = `
       className="emotion-0"
       onClick={[Function]}
     >
-      Participants 0
+      Participants 1
     </p>
     <p
       className="emotion-1"
@@ -125,32 +136,70 @@ exports[`renders Tabs Snapshot 1`] = `
   </div>
   <div>
     <div
-      className="emotion-7"
+      className="emotion-5"
     >
       <section
-        className="emotion-6"
+        className="emotion-4"
       >
         <div
           className="emotion-3"
         >
-          John Doe
-        </div>
-        <div
-          className="emotion-3"
-        >
-          Jane Smith
-        </div>
-        <div
-          className="emotion-3"
-        >
-          Elon Musk
+          <p>
+            Jane Downey
+          </p>
         </div>
       </section>
     </div>
     <div
-      className="emotion-8"
+      className="emotion-9"
     >
-      asd2
+      <section
+        className="emotion-8"
+      >
+        <div>
+          <div>
+            <div>
+              <p>
+                Jane Downey
+              </p>
+               
+              <span>
+                date
+              </span>
+            </div>
+            <p>
+              After losing his wife seven years earlier, the eccentric Dr. John Dolittle, famed doctor and veterinarian of Queen Victoria’s England, hermits himself away behind the high walls of Dolittle Manor with only his menagerie of exotic animals for company.
+            </p>
+          </div>
+          <div>
+            <div>
+              <p>
+                Jane Downey
+              </p>
+               
+              <span>
+                date
+              </span>
+            </div>
+            <p>
+              But when the young queen falls gravely ill, a reluctant Dolittle is forced to set sail on an epic adventure to a mythical island in search of a cure, regaining his wit and courage as he crosses old adversaries and discovers wondrous creatures.
+            </p>
+          </div>
+        </div>
+        <form
+          className="emotion-4"
+          onSubmit={[Function]}
+        >
+          <input
+            className="emotion-6"
+            id="message"
+            onChange={[Function]}
+            placeholder="Message"
+            type="text"
+            value=""
+          />
+        </form>
+      </section>
     </div>
   </div>
 </section>

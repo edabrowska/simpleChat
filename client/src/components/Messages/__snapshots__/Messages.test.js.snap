@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Messages Snapshot 1`] = `
+.emotion-2 {
+  width: 100%;
+  padding: 10px 40px;
+}
+
+.emotion-1 {
+  width: 100%;
+}
+
+.emotion-0 {
+  width: 100%;
+  padding: 10px 29px;
+  border: 1px solid #868c97;
+  border-radius: 5px;
+}
+
+<section
+  className="emotion-2"
+>
+  <div>
+    <div>
+      <div>
+        <p>
+          Jane Downey
+        </p>
+         
+        <span>
+          date
+        </span>
+      </div>
+      <p>
+        After losing his wife seven years earlier, the eccentric Dr. John Dolittle, famed doctor and veterinarian of Queen Victoria’s England, hermits himself away behind the high walls of Dolittle Manor with only his menagerie of exotic animals for company.
+      </p>
+    </div>
+    <div>
+      <div>
+        <p>
+          Jane Downey
+        </p>
+         
+        <span>
+          date
+        </span>
+      </div>
+      <p>
+        But when the young queen falls gravely ill, a reluctant Dolittle is forced to set sail on an epic adventure to a mythical island in search of a cure, regaining his wit and courage as he crosses old adversaries and discovers wondrous creatures.
+      </p>
+    </div>
+  </div>
+  <form
+    className="emotion-1"
+    onSubmit={[Function]}
+  >
+    <input
+      className="emotion-0"
+      id="message"
+      onChange={[Function]}
+      placeholder="Message"
+      type="text"
+      value=""
+    />
+  </form>
+</section>
+`;

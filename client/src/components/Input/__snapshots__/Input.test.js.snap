@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Input Snapshot 1`] = `
+.emotion-1 {
+  width: 100%;
+}
+
+.emotion-0 {
+  width: 100%;
+  padding: 10px 29px;
+  border: 1px solid #868c97;
+  border-radius: 5px;
+}
+
+<form
+  className="emotion-1"
+  onSubmit={[Function]}
+>
+  <input
+    className="emotion-0"
+    id={0}
+    onChange={[Function]}
+    placeholder="Type in..."
+    type="text"
+    value="text"
+  />
+</form>
+`;

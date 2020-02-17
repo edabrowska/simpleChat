@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders app Snapshot 1`] = `
-.emotion-12 {
+.emotion-15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17,14 +17,14 @@ exports[`renders app Snapshot 1`] = `
   background-color: #FFF;
 }
 
-.emotion-11 {
+.emotion-14 {
   width: 100%;
   height: 100%;
   overflow: auto;
 }
 
 @media (min-width:768px) {
-  .emotion-11 {
+  .emotion-14 {
     width: 720px;
     height: 1800px;
   }
@@ -47,7 +47,7 @@ exports[`renders app Snapshot 1`] = `
   background-color: #ebebeb;
 }
 
-.emotion-7 {
+.emotion-5 {
   width: 100%;
 }
 
@@ -131,7 +131,7 @@ exports[`renders app Snapshot 1`] = `
   width: 100%;
 }
 
-.emotion-4 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -141,20 +141,31 @@ exports[`renders app Snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  height: 120px;
-  padding: 0 40px;
+  padding: 10px 40px;
   border-bottom: 1px solid #e1e3e5;
 }
 
-.emotion-9 {
+.emotion-4 {
+  width: 100%;
+  padding: 10px 29px;
+  border: 1px solid #868c97;
+  border-radius: 5px;
+}
+
+.emotion-12 {
   display: none;
 }
 
+.emotion-11 {
+  width: 100%;
+  padding: 10px 40px;
+}
+
 <main
-  className="emotion-12"
+  className="emotion-15"
 >
   <div
-    className="emotion-11"
+    className="emotion-14"
   >
     <header
       className="emotion-0"
@@ -162,7 +173,7 @@ exports[`renders app Snapshot 1`] = `
       Status meeting standup
     </header>
     <section
-      className="emotion-7"
+      className="emotion-5"
     >
       <div
         className="emotion-3"
@@ -185,29 +196,48 @@ exports[`renders app Snapshot 1`] = `
           className="emotion-8"
         >
           <section
-            className="emotion-7"
+            className="emotion-5"
           >
             <div
-              className="emotion-4"
+              className="emotion-6"
             >
-              John Doe
-            </div>
-            <div
-              className="emotion-4"
-            >
-              Jane Smith
-            </div>
-            <div
-              className="emotion-4"
-            >
-              Elon Musk
+              <form
+                className="emotion-5"
+                onSubmit={[Function]}
+              >
+                <input
+                  className="emotion-4"
+                  id="name"
+                  onChange={[Function]}
+                  placeholder="Type in your name"
+                  type="text"
+                  value=""
+                />
+              </form>
             </div>
           </section>
         </div>
         <div
-          className="emotion-9"
+          className="emotion-12"
         >
-          asd2
+          <section
+            className="emotion-11"
+          >
+            <div />
+            <form
+              className="emotion-5"
+              onSubmit={[Function]}
+            >
+              <input
+                className="emotion-4"
+                id="message"
+                onChange={[Function]}
+                placeholder="Message"
+                type="text"
+                value=""
+              />
+            </form>
+          </section>
         </div>
       </div>
     </section>

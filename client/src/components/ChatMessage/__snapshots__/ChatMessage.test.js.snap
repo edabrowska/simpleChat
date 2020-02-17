@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ChatMessage Snapshot 1`] = `
+<div>
+  <div>
+    <p>
+      Jane Downey
+    </p>
+     
+    <span>
+      date
+    </span>
+  </div>
+  <p>
+    After losing his wife seven years earlier, the eccentric Dr. John Dolittle, famed doctor and veterinarian of Queen Victoria’s England, hermits himself away behind the high walls of Dolittle Manor with only his menagerie of exotic animals for company.
+  </p>
+</div>
+`;
