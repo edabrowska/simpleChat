@@ -1,29 +1,28 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import { ParticipantsRoot } from './Participants.shards'
 
 import ParticipantTile from '../ParticipantTile/ParticipantTile'
 
-const getParticipants = [
-  {
-    name: 'John Doe',
-    id: 0,
-  },
-  {
-    name: 'Jane Smith',
-    id: 1,
-  },
-  {
-    name: 'Elon Musk',
-    id: 2,
-  }
-]
 
-const Participants = () => <ParticipantsRoot>
-  {getParticipants.map(participant => <ParticipantTile
-    key={participant.id}
-    name={participant.name}
-  />)}
-</ParticipantsRoot>
+const ConnectedParticipants = ({ getParticipants }) => {
+
+  return <ParticipantsRoot>
+    {getParticipants.length
+      ? getParticipants.map((participant, index) => <ParticipantTile
+        key={`${participant.name}-${index}`}
+        name={participant.name}
+      />)
+      : <ParticipantTile placeholder='Type in your name' />
+    }
+  </ParticipantsRoot>
+}
+
+const Participants = connect(
+  state => ({
+    getParticipants: state.participants.participantsList
+  })
+)(ConnectedParticipants)
 
 export default Participants

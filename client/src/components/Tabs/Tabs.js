@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 
 import { TabsRoot, TabHeader, TabTitle, TabContent } from './Tabs.shards'
 
 import Participants from '../Participants/Participants'
+import Messages from '../Messages/Messages'
 
 const getTabs = (participantsCount) => [
   {
@@ -11,11 +13,11 @@ const getTabs = (participantsCount) => [
   },
   {
     name: 'Chat',
-    content: 'asd2'
+    content: <Messages />
   }
 ]
 
-const Tabs = ({ participantsCount = 0 }) => {
+const ConnectedTabs = ({ participantsCount = 0 }) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const tabs = getTabs(participantsCount)
 
@@ -42,5 +44,11 @@ const Tabs = ({ participantsCount = 0 }) => {
     </TabsRoot>
   )
 }
+
+const Tabs = connect(
+  state => ({
+    participantsCount: state.participants.participantsList.length
+  })
+)(ConnectedTabs)
 
 export default Tabs
