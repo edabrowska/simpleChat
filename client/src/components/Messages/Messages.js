@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 
 import { MessagesRoot } from './Messages.shards'
@@ -8,16 +8,43 @@ import Input from '../Input/Input'
 
 import { addMessage } from '../../store/actions'
 
+import { messageID } from '../../utils/helpers'
+import { URL } from '../../utils/consts.js'
+
 const ConnectedMessages = ({
   getParticipantName = [],
-  getMessages = [],
+  getMessages,
   addMessage,
 }) => {
   const [text, setText] = useState({
     name: '',
     message: '',
-    id: 0
+    id: messageID()
   })
+  const wsMsg = new WebSocket(URL)
+
+  useEffect(() => {
+    wsMsg.onopen = () => {
+      // on connecting, do nothing but log it to the console
+      console.log('connected')
+    }
+
+    wsMsg.onmessage = evt => {
+      // on receiving a message, add it to the list of messages
+      const socketData = JSON.parse(evt.data)
+
+      if (socketData.type === 'msgevent') {
+        addMessage(socketData)
+      }
+    }
+
+    wsMsg.onclose = () => {
+      console.log('disconnected')
+      // automatically try to reconnect on connection loss
+      // wsMsg = new WebSocket(URL)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const handleChange = event => {
     setText({
@@ -29,11 +56,14 @@ const ConnectedMessages = ({
 
   const handleSubmit = event => {
     event.preventDefault()
-    addMessage(text)
+    wsMsg.send(JSON.stringify({
+      ...text,
+      type: 'msgevent'
+    }))
     setText({
       name: getParticipantName[0].name,
       message: '',
-      id: text.id + 1
+      id: messageID()
     })
   }
 
@@ -58,7 +88,6 @@ const ConnectedMessages = ({
 const Messages = connect(
   state => ({
     getParticipantName: state.participants.participantsList,
-    getMessages: state.messages.messagesList
   }),
   dispatch => ({
     addMessage: (text) => dispatch(addMessage(text))

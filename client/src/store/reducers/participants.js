@@ -8,6 +8,7 @@ const participantsReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PARTICIPANT:
       return Object.assign({}, state, {
+        // participantsList: [action.payload, ...state.participantsList]
         participantsList: state.participantsList.concat(action.payload)
       })
 

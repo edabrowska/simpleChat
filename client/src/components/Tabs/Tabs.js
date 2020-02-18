@@ -6,20 +6,24 @@ import { TabsRoot, TabHeader, TabTitle, TabContent } from './Tabs.shards'
 import Participants from '../Participants/Participants'
 import Messages from '../Messages/Messages'
 
-const getTabs = (participantsCount) => [
+const getTabs = (getParticipants, participantsCount, getMessages) => [
   {
     name: `Participants ${participantsCount}`,
-    content: <Participants />
+    content: <Participants getParticipants={getParticipants} />
   },
   {
     name: 'Chat',
-    content: <Messages />
+    content: <Messages getMessages={getMessages} />
   }
 ]
 
-const ConnectedTabs = ({ participantsCount = 0 }) => {
+const ConnectedTabs = ({
+  getParticipants,
+  getMessages,
+}) => {
   const [activeIndex, setActiveIndex] = useState(0)
-  const tabs = getTabs(participantsCount)
+  const participantsCount = getParticipants.length
+  const tabs = getTabs(getParticipants, participantsCount, getMessages)
 
   return (
     <TabsRoot>
@@ -47,7 +51,8 @@ const ConnectedTabs = ({ participantsCount = 0 }) => {
 
 const Tabs = connect(
   state => ({
-    participantsCount: state.participants.participantsList.length
+    getParticipants: state.participants.participantsList,
+    getMessages: state.messages.messagesList
   })
 )(ConnectedTabs)
 
