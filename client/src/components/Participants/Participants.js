@@ -5,7 +5,7 @@ import { ParticipantsRoot, ParticipantTile } from './Participants.shards'
 
 import Input from '../Input/Input'
 
-import { addParticipant } from '../../store/actions'
+import { addParticipant, addUser } from '../../store/actions'
 
 import { participantID } from '../../utils/helpers'
 import { URL } from '../../utils/consts.js'
@@ -13,6 +13,7 @@ import { URL } from '../../utils/consts.js'
 const ConnectedParticipants = ({
   getParticipants,
   addParticipant,
+  addUser
 }) => {
   const [newName, setNewName] = useState({
     name: '',
@@ -56,6 +57,9 @@ const ConnectedParticipants = ({
       ...newName,
       type: 'userevent'
     }))
+
+    addUser(newName)
+
     setNewName({
       name: '',
       id: ''
@@ -64,8 +68,8 @@ const ConnectedParticipants = ({
 
   return <ParticipantsRoot>
     <div>
-      {getParticipants.map((participant, index) => <ParticipantTile
-        key={`${participant.name}-${index}`}
+      {getParticipants.map(participant => <ParticipantTile
+        key={participant.id}
       >
         <p>{participant.name}</p>
       </ParticipantTile>)}
@@ -83,7 +87,8 @@ const ConnectedParticipants = ({
 const Participants = connect(
   null,
   dispatch => ({
-    addParticipant: (participant) => dispatch(addParticipant(participant))
+    addParticipant: (participant) => dispatch(addParticipant(participant)),
+    addUser: (user) => dispatch(addUser(user))
   })
 )(ConnectedParticipants)
 

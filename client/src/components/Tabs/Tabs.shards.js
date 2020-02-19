@@ -22,6 +22,7 @@ export const TabTitle = styled.p`
   cursor: pointer;
   background-color: ${({ theme }) => theme.colors.background.secondary};
   border-bottom: ${({ theme }) => theme.commons.borders.main};
+  letter-spacing: 2px;
 
   ${({ isActive, theme }) => isActive && css`
     background-color: ${theme.colors.background.primary};
@@ -31,7 +32,7 @@ export const TabTitle = styled.p`
 
   ${({ isActive, index, theme }) => isActive && index === 0 && css`
     &:first-of-type {
-      border-top-right-radius: 5px;
+      border-top-right-radius: ${theme.commons.borderRadius.main};
       border-top-left-radius: 0;
       border-right: ${theme.commons.borders.main};
     }
@@ -39,7 +40,7 @@ export const TabTitle = styled.p`
 
   ${({ isActive, index, theme }) => isActive && index === 1 && css`
     &:last-of-type {
-      border-top-left-radius: 5px;
+      border-top-left-radius: ${theme.commons.borderRadius.main};
       border-top-right-radius: 0;
       border-left: ${theme.commons.borders.main};
     }

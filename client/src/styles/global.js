@@ -17,7 +17,7 @@ const base = css`
 
   body {
     color: ${text.primary};
-    font-size: 2.2rem;
+    font-size: 3rem;
     height: 100vh;
   }
 

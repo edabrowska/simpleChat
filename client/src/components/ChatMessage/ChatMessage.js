@@ -1,16 +1,22 @@
 import React from 'react'
 
-// import { ChatAppRoot, Header } from './ChatApp.shards'
+import {
+	ChatMessageRoot,
+	Header,
+	Name,
+	Date,
+	Content
+} from './ChatMessage.shards'
 
 const ChatMessage = ({ name = '', text = '' }) => {
 
 	return (
-		<div>
-			<div>
-				<p>{name}</p> <span>date</span>
-			</div>
-			<p>{text}</p>
-		</div>
+		<ChatMessageRoot>
+			<Header>
+				<Name>{name}</Name> <Date>date</Date>
+			</Header>
+			<Content>{text}</Content>
+		</ChatMessageRoot>
 	)
 }
 

@@ -8,7 +8,7 @@ import Messages from '../Messages/Messages'
 
 const getTabs = (getParticipants, participantsCount, getMessages) => [
   {
-    name: `Participants ${participantsCount}`,
+    name: `Participants (${participantsCount})`,
     content: <Participants getParticipants={getParticipants} />
   },
   {

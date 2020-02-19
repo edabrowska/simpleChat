@@ -12,7 +12,7 @@ import { messageID } from '../../utils/helpers'
 import { URL } from '../../utils/consts.js'
 
 const ConnectedMessages = ({
-  getParticipantName = [],
+  getUser,
   getMessages,
   addMessage,
 }) => {
@@ -48,7 +48,7 @@ const ConnectedMessages = ({
 
   const handleChange = event => {
     setText({
-      name: getParticipantName[0].name,
+      name: getUser.name,
       message: event.target.value,
       id: text.id
     })
@@ -60,8 +60,9 @@ const ConnectedMessages = ({
       ...text,
       type: 'msgevent'
     }))
+
     setText({
-      name: getParticipantName[0].name,
+      name: getUser.name,
       message: '',
       id: messageID()
     })
@@ -87,7 +88,7 @@ const ConnectedMessages = ({
 
 const Messages = connect(
   state => ({
-    getParticipantName: state.participants.participantsList,
+    getUser: state.user.details,
   }),
   dispatch => ({
     addMessage: (text) => dispatch(addMessage(text))

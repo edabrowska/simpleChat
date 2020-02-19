@@ -17,4 +17,6 @@ export const Header = styled.header`
   justify-content: center;
   height: 122px;
   background-color: ${({ theme }) => theme.colors.background.secondary};
+  letter-spacing: 1.7px;
+  text-transform: capitalize;
 `
