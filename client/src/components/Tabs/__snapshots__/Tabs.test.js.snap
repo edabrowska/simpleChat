@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Tabs Snapshot 1`] = `
-.emotion-4 {
+.emotion-21 {
   width: 100%;
 }
 
@@ -40,13 +40,17 @@ exports[`renders Tabs Snapshot 1`] = `
   cursor: pointer;
   background-color: #ebebeb;
   border-bottom: 1px solid #e1e3e5;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
   background-color: #FFF;
   border-top: 1px solid #e1e3e5;
   border-bottom: 1px solid transparent;
 }
 
 .emotion-0:first-of-type {
-  border-top-right-radius: 5px;
+  border-top-right-radius: 9px;
   border-top-left-radius: 0;
   border-right: 1px solid #e1e3e5;
 }
@@ -73,16 +77,25 @@ exports[`renders Tabs Snapshot 1`] = `
   cursor: pointer;
   background-color: #ebebeb;
   border-bottom: 1px solid #e1e3e5;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
 }
 
 .emotion-1:hover {
   opacity: .9;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: none;
   display: block;
   width: 100%;
+}
+
+.emotion-5 {
+  width: 100%;
+  padding: 0 30px;
 }
 
 .emotion-3 {
@@ -95,40 +108,95 @@ exports[`renders Tabs Snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  padding: 10px 40px;
+  height: 120px;
+  padding-left: 12px;
   border-bottom: 1px solid #e1e3e5;
+  text-transform: capitalize;
 }
 
-.emotion-9 {
+.emotion-20 {
   display: none;
 }
 
-.emotion-8 {
-  width: 100%;
-  padding: 10px 40px;
+.emotion-11 {
+  padding-left: 17px;
+  padding-bottom: 17px;
 }
 
-.emotion-6 {
+.emotion-11:first-of-type {
+  padding-top: 25px;
+}
+
+.emotion-9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 11px 0 5px;
+}
+
+.emotion-7 {
+  font-weight: bold;
+  text-transform: capitalize;
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  margin-right: 15px;
+}
+
+.emotion-8 {
+  color: #979c9f;
+}
+
+.emotion-10 {
+  -webkit-letter-spacing: 1.4px;
+  -moz-letter-spacing: 1.4px;
+  -ms-letter-spacing: 1.4px;
+  letter-spacing: 1.4px;
+  line-height: 1.6;
+}
+
+.emotion-18 {
   width: 100%;
-  padding: 10px 29px;
-  border: 1px solid #868c97;
-  border-radius: 5px;
+  padding: 15px 0;
+}
+
+.emotion-17 {
+  width: 100%;
+  padding: 27px 33px;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  border: 2px solid #868c97;
+  border-radius: 9px;
+}
+
+.emotion-17:placeholder {
+  color: #979c9f;
 }
 
 <section
-  className="emotion-4"
+  className="emotion-21"
 >
   <div
     className="emotion-2"
   >
     <p
       className="emotion-0"
+      disabled={false}
       onClick={[Function]}
     >
-      Participants 1
+      Participants (2)
     </p>
     <p
       className="emotion-1"
+      disabled={false}
       onClick={[Function]}
     >
       Chat
@@ -136,62 +204,91 @@ exports[`renders Tabs Snapshot 1`] = `
   </div>
   <div>
     <div
-      className="emotion-5"
+      className="emotion-6"
     >
       <section
-        className="emotion-4"
+        className="emotion-5"
       >
-        <div
-          className="emotion-3"
-        >
-          <p>
-            Jane Downey
-          </p>
+        <div>
+          <div
+            className="emotion-3"
+          >
+            <p>
+              Jane Downey
+            </p>
+          </div>
+          <div
+            className="emotion-3"
+          >
+            <p>
+              michel sagan
+            </p>
+          </div>
         </div>
       </section>
     </div>
     <div
-      className="emotion-9"
+      className="emotion-20"
     >
       <section
-        className="emotion-8"
+        className="emotion-5"
       >
         <div>
-          <div>
-            <div>
-              <p>
+          <div
+            className="emotion-11"
+          >
+            <div
+              className="emotion-9"
+            >
+              <p
+                className="emotion-7"
+              >
                 Jane Downey
               </p>
                
-              <span>
-                date
+              <span
+                className="emotion-8"
+              >
+                12:58:24 
               </span>
             </div>
-            <p>
+            <p
+              className="emotion-10"
+            >
               After losing his wife seven years earlier, the eccentric Dr. John Dolittle, famed doctor and veterinarian of Queen Victoria’s England, hermits himself away behind the high walls of Dolittle Manor with only his menagerie of exotic animals for company.
             </p>
           </div>
-          <div>
-            <div>
-              <p>
+          <div
+            className="emotion-11"
+          >
+            <div
+              className="emotion-9"
+            >
+              <p
+                className="emotion-7"
+              >
                 Jane Downey
               </p>
                
-              <span>
-                date
+              <span
+                className="emotion-8"
+              >
+                12:59:54 
               </span>
             </div>
-            <p>
+            <p
+              className="emotion-10"
+            >
               But when the young queen falls gravely ill, a reluctant Dolittle is forced to set sail on an epic adventure to a mythical island in search of a cure, regaining his wit and courage as he crosses old adversaries and discovers wondrous creatures.
             </p>
           </div>
         </div>
         <form
-          className="emotion-4"
+          className="emotion-18"
           onSubmit={[Function]}
         >
           <input
-            className="emotion-6"
+            className="emotion-17"
             id="message"
             onChange={[Function]}
             placeholder="Message"

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders app Snapshot 1`] = `
-.emotion-15 {
+.emotion-14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17,14 +17,14 @@ exports[`renders app Snapshot 1`] = `
   background-color: #FFF;
 }
 
-.emotion-14 {
+.emotion-13 {
   width: 100%;
   height: 100%;
   overflow: auto;
 }
 
 @media (min-width:768px) {
-  .emotion-14 {
+  .emotion-13 {
     width: 720px;
     height: 1800px;
   }
@@ -45,9 +45,14 @@ exports[`renders app Snapshot 1`] = `
   justify-content: center;
   height: 122px;
   background-color: #ebebeb;
+  -webkit-letter-spacing: 1.7px;
+  -moz-letter-spacing: 1.7px;
+  -ms-letter-spacing: 1.7px;
+  letter-spacing: 1.7px;
+  text-transform: capitalize;
 }
 
-.emotion-5 {
+.emotion-12 {
   width: 100%;
 }
 
@@ -86,13 +91,17 @@ exports[`renders app Snapshot 1`] = `
   cursor: pointer;
   background-color: #ebebeb;
   border-bottom: 1px solid #e1e3e5;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
   background-color: #FFF;
   border-top: 1px solid #e1e3e5;
   border-bottom: 1px solid transparent;
 }
 
 .emotion-1:first-of-type {
-  border-top-right-radius: 5px;
+  border-top-right-radius: 9px;
   border-top-left-radius: 0;
   border-right: 1px solid #e1e3e5;
 }
@@ -119,53 +128,57 @@ exports[`renders app Snapshot 1`] = `
   cursor: pointer;
   background-color: #ebebeb;
   border-bottom: 1px solid #e1e3e5;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  cursor: default;
 }
 
 .emotion-2:hover {
   opacity: .9;
 }
 
-.emotion-8 {
+.emotion-7 {
   display: none;
   display: block;
   width: 100%;
 }
 
 .emotion-6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   width: 100%;
-  padding: 10px 40px;
-  border-bottom: 1px solid #e1e3e5;
+  padding: 0 30px;
+}
+
+.emotion-5 {
+  width: 100%;
+  padding: 15px 0;
 }
 
 .emotion-4 {
   width: 100%;
-  padding: 10px 29px;
-  border: 1px solid #868c97;
-  border-radius: 5px;
+  padding: 27px 33px;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  border: 2px solid #868c97;
+  border-radius: 9px;
 }
 
-.emotion-12 {
-  display: none;
+.emotion-4:placeholder {
+  color: #979c9f;
 }
 
 .emotion-11 {
-  width: 100%;
-  padding: 10px 40px;
+  display: none;
 }
 
 <main
-  className="emotion-15"
+  className="emotion-14"
 >
   <div
-    className="emotion-14"
+    className="emotion-13"
   >
     <header
       className="emotion-0"
@@ -173,19 +186,21 @@ exports[`renders app Snapshot 1`] = `
       Status meeting standup
     </header>
     <section
-      className="emotion-5"
+      className="emotion-12"
     >
       <div
         className="emotion-3"
       >
         <p
           className="emotion-1"
+          disabled={true}
           onClick={[Function]}
         >
-          Participants 0
+          Participants (0)
         </p>
         <p
           className="emotion-2"
+          disabled={true}
           onClick={[Function]}
         >
           Chat
@@ -193,35 +208,32 @@ exports[`renders app Snapshot 1`] = `
       </div>
       <div>
         <div
-          className="emotion-8"
+          className="emotion-7"
         >
           <section
-            className="emotion-5"
+            className="emotion-6"
           >
-            <div
-              className="emotion-6"
+            <div />
+            <form
+              className="emotion-5"
+              onSubmit={[Function]}
             >
-              <form
-                className="emotion-5"
-                onSubmit={[Function]}
-              >
-                <input
-                  className="emotion-4"
-                  id="name"
-                  onChange={[Function]}
-                  placeholder="Type in your name"
-                  type="text"
-                  value=""
-                />
-              </form>
-            </div>
+              <input
+                className="emotion-4"
+                id="name"
+                onChange={[Function]}
+                placeholder="Type in your name"
+                type="text"
+                value=""
+              />
+            </form>
           </section>
         </div>
         <div
-          className="emotion-12"
+          className="emotion-11"
         >
           <section
-            className="emotion-11"
+            className="emotion-6"
           >
             <div />
             <form

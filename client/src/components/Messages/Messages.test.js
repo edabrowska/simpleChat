@@ -15,11 +15,15 @@ expect.addSnapshotSerializer(serializer)
 describe('renders Messages', () => {
   it('Snapshot', () => {
     const mockStore = configureStore()
+    const mockData = {
+      getMessages: initialState.messages.messagesList,
+      getUser: initialState.user.details
+    }
 
     const component = renderer.create(
       <Provider store={mockStore(initialState)}>
         <ThemeProvider theme={theme}>
-          <Messages />
+          <Messages getMessages={mockData.getMessages} getUser={mockData.getUser} />
         </ThemeProvider>
       </Provider>)
     const tree = component.toJSON()

@@ -15,11 +15,18 @@ expect.addSnapshotSerializer(serializer)
 describe('renders Participants', () => {
   it('Snapshot', () => {
     const mockStore = configureStore()
+    const mockData = {
+      getParticipants: initialState.participants.participantsList,
+      getUser: initialState.user.details
+    }
 
     const component = renderer.create(
       <Provider store={mockStore(initialState)}>
         <ThemeProvider theme={theme}>
-          <Participants />
+          <Participants
+            getParticipants={mockData.getParticipants}
+            getUser={mockData.getUser}
+          />
         </ThemeProvider>
       </Provider>
     )

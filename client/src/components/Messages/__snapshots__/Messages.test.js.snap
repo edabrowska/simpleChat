@@ -1,61 +1,133 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Messages Snapshot 1`] = `
-.emotion-2 {
+.emotion-12 {
   width: 100%;
-  padding: 10px 40px;
+  padding: 0 30px;
 }
 
-.emotion-1 {
-  width: 100%;
+.emotion-4 {
+  padding-left: 17px;
+  padding-bottom: 17px;
+}
+
+.emotion-4:first-of-type {
+  padding-top: 25px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 11px 0 5px;
 }
 
 .emotion-0 {
+  font-weight: bold;
+  text-transform: capitalize;
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  margin-right: 15px;
+}
+
+.emotion-1 {
+  color: #979c9f;
+}
+
+.emotion-3 {
+  -webkit-letter-spacing: 1.4px;
+  -moz-letter-spacing: 1.4px;
+  -ms-letter-spacing: 1.4px;
+  letter-spacing: 1.4px;
+  line-height: 1.6;
+}
+
+.emotion-11 {
   width: 100%;
-  padding: 10px 29px;
-  border: 1px solid #868c97;
-  border-radius: 5px;
+  padding: 15px 0;
+}
+
+.emotion-10 {
+  width: 100%;
+  padding: 27px 33px;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  border: 2px solid #868c97;
+  border-radius: 9px;
+}
+
+.emotion-10:placeholder {
+  color: #979c9f;
 }
 
 <section
-  className="emotion-2"
+  className="emotion-12"
 >
   <div>
-    <div>
-      <div>
-        <p>
+    <div
+      className="emotion-4"
+    >
+      <div
+        className="emotion-2"
+      >
+        <p
+          className="emotion-0"
+        >
           Jane Downey
         </p>
          
-        <span>
-          date
+        <span
+          className="emotion-1"
+        >
+          12:58:24 
         </span>
       </div>
-      <p>
+      <p
+        className="emotion-3"
+      >
         After losing his wife seven years earlier, the eccentric Dr. John Dolittle, famed doctor and veterinarian of Queen Victoria’s England, hermits himself away behind the high walls of Dolittle Manor with only his menagerie of exotic animals for company.
       </p>
     </div>
-    <div>
-      <div>
-        <p>
+    <div
+      className="emotion-4"
+    >
+      <div
+        className="emotion-2"
+      >
+        <p
+          className="emotion-0"
+        >
           Jane Downey
         </p>
          
-        <span>
-          date
+        <span
+          className="emotion-1"
+        >
+          12:59:54 
         </span>
       </div>
-      <p>
+      <p
+        className="emotion-3"
+      >
         But when the young queen falls gravely ill, a reluctant Dolittle is forced to set sail on an epic adventure to a mythical island in search of a cure, regaining his wit and courage as he crosses old adversaries and discovers wondrous creatures.
       </p>
     </div>
   </div>
   <form
-    className="emotion-1"
+    className="emotion-11"
     onSubmit={[Function]}
   >
     <input
-      className="emotion-0"
+      className="emotion-10"
       id="message"
       onChange={[Function]}
       placeholder="Message"

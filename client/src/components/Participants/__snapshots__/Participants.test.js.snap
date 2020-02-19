@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Participants Snapshot 1`] = `
-.emotion-1 {
+.emotion-2 {
   width: 100%;
+  padding: 0 30px;
 }
 
 .emotion-0 {
@@ -15,19 +16,30 @@ exports[`renders Participants Snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  padding: 10px 40px;
+  height: 120px;
+  padding-left: 12px;
   border-bottom: 1px solid #e1e3e5;
+  text-transform: capitalize;
 }
 
 <section
-  className="emotion-1"
+  className="emotion-2"
 >
-  <div
-    className="emotion-0"
-  >
-    <p>
-      Jane Downey
-    </p>
+  <div>
+    <div
+      className="emotion-0"
+    >
+      <p>
+        Jane Downey
+      </p>
+    </div>
+    <div
+      className="emotion-0"
+    >
+      <p>
+        michel sagan
+      </p>
+    </div>
   </div>
 </section>
 `;
