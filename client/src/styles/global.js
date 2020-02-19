@@ -17,8 +17,12 @@ const base = css`
 
   body {
     color: ${text.primary};
-    font-size: 3rem;
+    font-size: 2rem;
     height: 100vh;
+
+    @media (min-width: 576px) {
+      font-size: 3rem;
+    }
   }
 
   a {

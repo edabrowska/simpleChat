@@ -6,10 +6,10 @@ import { TabsRoot, TabHeader, TabTitle, TabContent } from './Tabs.shards'
 import Participants from '../Participants/Participants'
 import Messages from '../Messages/Messages'
 
-const getTabs = (getParticipants, participantsCount, getMessages) => [
+const getTabs = (getParticipants, participantsCount, getMessages, getUser) => [
   {
     name: `Participants (${participantsCount})`,
-    content: <Participants getParticipants={getParticipants} />
+    content: <Participants getParticipants={getParticipants} getUser={getUser} />
   },
   {
     name: 'Chat',
@@ -20,10 +20,12 @@ const getTabs = (getParticipants, participantsCount, getMessages) => [
 const ConnectedTabs = ({
   getParticipants,
   getMessages,
+  getUser = {}
 }) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const participantsCount = getParticipants.length
-  const tabs = getTabs(getParticipants, participantsCount, getMessages)
+  const tabs = getTabs(getParticipants, participantsCount, getMessages, getUser)
+  const disableMsgWithoutUser = getUser.name
 
   return (
     <TabsRoot>
@@ -31,8 +33,9 @@ const ConnectedTabs = ({
         {tabs.map((tab, index) => <TabTitle
           key={index}
           isActive={index === activeIndex}
-          onClick={() => setActiveIndex(index)}
+          onClick={() => disableMsgWithoutUser && setActiveIndex(index)}
           index={index}
+          disabled={!disableMsgWithoutUser}
         >
           {tab.name}
         </TabTitle>)}
@@ -52,7 +55,8 @@ const ConnectedTabs = ({
 const Tabs = connect(
   state => ({
     getParticipants: state.participants.participantsList,
-    getMessages: state.messages.messagesList
+    getMessages: state.messages.messagesList,
+    getUser: state.user.details,
   })
 )(ConnectedTabs)
 

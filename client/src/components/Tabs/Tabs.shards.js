@@ -46,6 +46,10 @@ export const TabTitle = styled.p`
     }
   `}
 
+  ${({ isActive, index, disabled }) => !isActive && index === 1 && disabled && css`
+    cursor: default;
+  `}
+
   &:hover {
     opacity: .9;
   }

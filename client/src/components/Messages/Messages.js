@@ -8,7 +8,7 @@ import Input from '../Input/Input'
 
 import { addMessage } from '../../store/actions'
 
-import { messageID } from '../../utils/helpers'
+import { messageID, getMsgHour } from '../../utils/helpers'
 import { URL } from '../../utils/consts.js'
 
 const ConnectedMessages = ({
@@ -19,7 +19,8 @@ const ConnectedMessages = ({
   const [text, setText] = useState({
     name: '',
     message: '',
-    id: messageID()
+    id: messageID(),
+    date: ''
   })
   const wsMsg = new WebSocket(URL)
 
@@ -50,30 +51,36 @@ const ConnectedMessages = ({
     setText({
       name: getUser.name,
       message: event.target.value,
-      id: text.id
+      id: text.id,
+      date: getMsgHour()
     })
   }
 
   const handleSubmit = event => {
     event.preventDefault()
-    wsMsg.send(JSON.stringify({
-      ...text,
-      type: 'msgevent'
-    }))
 
-    setText({
-      name: getUser.name,
-      message: '',
-      id: messageID()
-    })
+    if (text.message.length) {
+      wsMsg.send(JSON.stringify({
+        ...text,
+        type: 'msgevent'
+      }))
+
+      setText({
+        name: getUser.name,
+        message: '',
+        id: messageID(),
+        date: ''
+      })
+    }
   }
 
   return <MessagesRoot>
     <div>
-      {getMessages.map((message, index) => <ChatMessage
-        key={index}
+      {getMessages.map(message => <ChatMessage
+        key={message.id}
         text={message.message}
         name={message.name}
+        date={message.date}
       />)}
     </div>
     <Input

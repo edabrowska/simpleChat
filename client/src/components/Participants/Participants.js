@@ -13,7 +13,8 @@ import { URL } from '../../utils/consts.js'
 const ConnectedParticipants = ({
   getParticipants,
   addParticipant,
-  addUser
+  addUser,
+  getUser
 }) => {
   const [newName, setNewName] = useState({
     name: '',
@@ -74,13 +75,13 @@ const ConnectedParticipants = ({
         <p>{participant.name}</p>
       </ParticipantTile>)}
     </div>
-    <Input
+    {!getUser.name && <Input
       handleSubmit={handleSubmit}
       id='name'
       value={newName.name}
       placeholder='Type in your name'
       handleChange={handleChange}
-    />
+    />}
   </ParticipantsRoot>
 }
 
