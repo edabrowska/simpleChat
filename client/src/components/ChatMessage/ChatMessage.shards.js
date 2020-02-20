@@ -75,3 +75,9 @@ export const Content = styled.p`
     font-style: italic;
   `}
 `
+
+export const Edited = styled.p`
+  font-size: 1rem;
+  font-style: italic;
+  color: ${({ theme }) => theme.colors.text.placeholder};
+`

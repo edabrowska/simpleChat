@@ -32,6 +32,7 @@ describe('renders ChatMessage', () => {
             isUser={initialState.user.details.name === mockData.name}
             removeMessage={() => { }}
             type={mockData.type}
+            editMessage={() => { }}
           />
         </ThemeProvider>
       </Provider>)

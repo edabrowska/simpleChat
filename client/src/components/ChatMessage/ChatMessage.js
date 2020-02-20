@@ -8,7 +8,8 @@ import {
 	Content,
 	Controls,
 	DeleteButton,
-	EditButton
+	EditButton,
+	Edited
 } from './ChatMessage.shards'
 
 import { EVENT_TYPE } from '../../utils/consts.js'
@@ -19,18 +20,18 @@ const ChatMessage = ({
 	date,
 	isUser,
 	removeMessage,
-	type
+	editMessage,
+	type,
 }) => <ChatMessageRoot>
 		{(isUser && type !== EVENT_TYPE.MESSAGE_REMOVE) && <Controls>
-			<EditButton>...</EditButton>
-			<DeleteButton onClick={removeMessage}>
-				x
-		</DeleteButton>
+			<EditButton onClick={editMessage}>...</EditButton>
+			<DeleteButton onClick={removeMessage}>x</DeleteButton>
 		</Controls>}
 		<Header>
 			<Name>{name}</Name> <Date>{date}</Date>
 		</Header>
 		<Content type={type}>{text}</Content>
+		{type === EVENT_TYPE.MESSAGE_EDIT && <Edited>Message edited</Edited>}
 	</ChatMessageRoot>
 
 export default ChatMessage

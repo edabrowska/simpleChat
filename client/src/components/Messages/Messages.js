@@ -21,7 +21,8 @@ const ConnectedMessages = ({
     name: '',
     message: '',
     id: messageID(),
-    date: ''
+    date: '',
+    type: ''
   })
   const wsMsg = new WebSocket(URL)
 
@@ -46,6 +47,13 @@ const ConnectedMessages = ({
           type: EVENT_TYPE.MESSAGE_REMOVE
         })
       }
+
+      if (socketData.type === EVENT_TYPE.MESSAGE_EDIT) {
+        updateMessage({
+          ...socketData,
+          type: EVENT_TYPE.MESSAGE_EDIT
+        })
+      }
     }
 
     wsMsg.onclose = () => {
@@ -61,7 +69,8 @@ const ConnectedMessages = ({
       name: getUser.name,
       message: event.target.value,
       id: text.id,
-      date: getMsgHour()
+      date: getMsgHour(),
+      type: text.type
     })
   }
 
@@ -69,16 +78,25 @@ const ConnectedMessages = ({
     event.preventDefault()
 
     if (text.message.length) {
-      wsMsg.send(JSON.stringify({
-        ...text,
-        type: EVENT_TYPE.MESSAGE_EVENT
-      }))
+
+      if (text.type === EVENT_TYPE.MESSAGE_EDIT) {
+        wsMsg.send(JSON.stringify({
+          ...text,
+          type: EVENT_TYPE.MESSAGE_EDIT
+        }))
+      } else {
+        wsMsg.send(JSON.stringify({
+          ...text,
+          type: EVENT_TYPE.MESSAGE_EVENT
+        }))
+      }
 
       setText({
         name: getUser.name,
         message: '',
         id: messageID(),
-        date: ''
+        date: '',
+        type: ''
       })
     }
   }
@@ -87,6 +105,16 @@ const ConnectedMessages = ({
     ...data,
     type: EVENT_TYPE.MESSAGE_REMOVE
   }))
+
+  const handleEditMessage = data => {
+    setText({
+      name: getUser.name,
+      message: data.message,
+      id: data.id,
+      date: data.date,
+      type: EVENT_TYPE.MESSAGE_EDIT
+    })
+  }
 
   return <MessagesRoot>
     <div>
@@ -98,6 +126,7 @@ const ConnectedMessages = ({
         isUser={getUser.name === data.name}
         removeMessage={() => handleRemoveMessage(data)}
         type={data.type}
+        editMessage={() => handleEditMessage(data)}
       />)}
     </div>
     <Input
