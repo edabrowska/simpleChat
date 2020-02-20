@@ -1,12 +1,52 @@
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
+
+import { EVENT_TYPE } from '../../utils/consts.js'
 
 export const ChatMessageRoot = styled.div`
+  position: relative;
   padding-left: 17px;
   padding-bottom: 17px;
 
   &:first-of-type {
-    padding-top: 25px;
+    margin-top: 25px;
   }
+
+  &:hover {
+    button {
+      display: inline-block;
+    }
+  }
+`
+
+export const Controls = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0px;
+  font-size: 2rem;
+`
+
+const Button = styled.button`
+  display: none;
+  cursor: pointer;
+  border: ${({ theme }) => theme.commons.borders.main};
+  border-radius: ${({ theme }) => theme.commons.borderRadius.main};
+
+  &:hover,
+  &:focus {
+    opacity: .6;
+  }
+`
+
+export const EditButton = styled(Button)`
+  color: ${({ theme }) => theme.colors.text.link};
+  padding: 2px 6px;
+  margin-right: 10px;
+`
+
+export const DeleteButton = styled(Button)`
+  color: ${({ theme }) => theme.colors.text.error};
+  padding: 2px 8px;
 `
 
 export const Header = styled.div`
@@ -29,4 +69,9 @@ export const Date = styled.span`
 export const Content = styled.p`
   letter-spacing: 1.4px;
   line-height: 1.6;
+
+  ${({ type, theme }) => type === EVENT_TYPE.MESSAGE_REMOVE && css`
+    color: ${theme.colors.text.placeholder};
+    font-style: italic;
+  `}
 `

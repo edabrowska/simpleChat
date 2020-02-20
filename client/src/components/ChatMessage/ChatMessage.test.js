@@ -18,13 +18,21 @@ describe('renders ChatMessage', () => {
     const mockData = {
       name: initialState.messages.messagesList[0].name,
       text: initialState.messages.messagesList[0].message,
-      date: initialState.messages.messagesList[0].date
+      date: initialState.messages.messagesList[0].date,
+      type: initialState.messages.messagesList[0].type
     }
 
     const component = renderer.create(
       <Provider store={mockStore(initialState)}>
         <ThemeProvider theme={theme}>
-          <ChatMessage name={mockData.name} text={mockData.text} date={mockData.date} />
+          <ChatMessage
+            name={mockData.name}
+            text={mockData.text}
+            date={mockData.date}
+            isUser={initialState.user.details.name === mockData.name}
+            removeMessage={() => { }}
+            type={mockData.type}
+          />
         </ThemeProvider>
       </Provider>)
     const tree = component.toJSON()

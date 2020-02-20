@@ -6,15 +6,16 @@ import { MessagesRoot } from './Messages.shards'
 import ChatMessage from '../ChatMessage/ChatMessage'
 import Input from '../Input/Input'
 
-import { addMessage } from '../../store/actions'
+import { addMessage, updateMessage } from '../../store/actions'
 
 import { messageID, getMsgHour } from '../../utils/helpers'
-import { URL } from '../../utils/consts.js'
+import { URL, EVENT_TYPE } from '../../utils/consts.js'
 
 const ConnectedMessages = ({
   getUser,
   getMessages,
   addMessage,
+  updateMessage,
 }) => {
   const [text, setText] = useState({
     name: '',
@@ -34,8 +35,16 @@ const ConnectedMessages = ({
       // on receiving a message, add it to the list of messages
       const socketData = JSON.parse(evt.data)
 
-      if (socketData.type === 'msgevent') {
+      if (socketData.type === EVENT_TYPE.MESSAGE_EVENT) {
         addMessage(socketData)
+      }
+
+      if (socketData.type === EVENT_TYPE.MESSAGE_REMOVE) {
+        updateMessage({
+          ...socketData,
+          message: 'Message removed',
+          type: EVENT_TYPE.MESSAGE_REMOVE
+        })
       }
     }
 
@@ -62,7 +71,7 @@ const ConnectedMessages = ({
     if (text.message.length) {
       wsMsg.send(JSON.stringify({
         ...text,
-        type: 'msgevent'
+        type: EVENT_TYPE.MESSAGE_EVENT
       }))
 
       setText({
@@ -74,13 +83,21 @@ const ConnectedMessages = ({
     }
   }
 
+  const handleRemoveMessage = data => wsMsg.send(JSON.stringify({
+    ...data,
+    type: EVENT_TYPE.MESSAGE_REMOVE
+  }))
+
   return <MessagesRoot>
     <div>
-      {getMessages.map(message => <ChatMessage
-        key={message.id}
-        text={message.message}
-        name={message.name}
-        date={message.date}
+      {getMessages.map(data => <ChatMessage
+        key={data.id}
+        text={data.message}
+        name={data.name}
+        date={data.date}
+        isUser={getUser.name === data.name}
+        removeMessage={() => handleRemoveMessage(data)}
+        type={data.type}
       />)}
     </div>
     <Input
@@ -98,7 +115,8 @@ const Messages = connect(
     getUser: state.user.details,
   }),
   dispatch => ({
-    addMessage: (text) => dispatch(addMessage(text))
+    addMessage: (text) => dispatch(addMessage(text)),
+    updateMessage: (id) => dispatch(updateMessage(id)),
   })
 )(ConnectedMessages)
 

@@ -19,14 +19,14 @@ exports[`renders app Snapshot 1`] = `
 
 .emotion-13 {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: auto;
 }
 
 @media (min-width:768px) {
   .emotion-13 {
     width: 720px;
-    height: 1800px;
+    max-height: 1800px;
   }
 }
 

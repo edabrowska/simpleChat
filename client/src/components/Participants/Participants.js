@@ -8,7 +8,7 @@ import Input from '../Input/Input'
 import { addParticipant, addUser } from '../../store/actions'
 
 import { participantID } from '../../utils/helpers'
-import { URL } from '../../utils/consts.js'
+import { URL, EVENT_TYPE } from '../../utils/consts.js'
 
 const ConnectedParticipants = ({
   getParticipants,
@@ -32,7 +32,7 @@ const ConnectedParticipants = ({
       // on receiving a message, add it to the list of messages
       const socketData = JSON.parse(evt.data)
 
-      if (socketData.type === 'userevent') {
+      if (socketData.type === EVENT_TYPE.USER_EVENT) {
         addParticipant(socketData)
       }
     }
@@ -56,7 +56,7 @@ const ConnectedParticipants = ({
     event.preventDefault()
     ws.send(JSON.stringify({
       ...newName,
-      type: 'userevent'
+      type: EVENT_TYPE.USER_EVENT
     }))
 
     addUser(newName)

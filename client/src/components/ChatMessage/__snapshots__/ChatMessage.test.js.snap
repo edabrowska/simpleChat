@@ -2,12 +2,17 @@
 
 exports[`renders ChatMessage Snapshot 1`] = `
 .emotion-4 {
+  position: relative;
   padding-left: 17px;
   padding-bottom: 17px;
 }
 
 .emotion-4:first-of-type {
-  padding-top: 25px;
+  margin-top: 25px;
+}
+
+.emotion-4:hover button {
+  display: inline-block;
 }
 
 .emotion-2 {
@@ -64,6 +69,7 @@ exports[`renders ChatMessage Snapshot 1`] = `
   </div>
   <p
     className="emotion-3"
+    type="msgevent"
   >
     After losing his wife seven years earlier, the eccentric Dr. John Dolittle, famed doctor and veterinarian of Queen Victoria’s England, hermits himself away behind the high walls of Dolittle Manor with only his menagerie of exotic animals for company.
   </p>

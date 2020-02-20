@@ -8,6 +8,8 @@ const _colorGrey92 = '#ebebeb'
 const _pictonBlue = '#3d90f1'
 const _oxfordBlue = '#354052'
 
+const _flamingo = '#f1443d'
+
 export const background = {
   primary: _white,
   secondary: _colorGrey92,
@@ -19,6 +21,7 @@ export const text = {
   link: _pictonBlue,
   placeholder: _colorGrey61,
   left: _colorGrey56,
+  error: _flamingo
 }
 
 export const border = {
