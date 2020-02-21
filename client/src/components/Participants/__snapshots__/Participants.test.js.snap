@@ -1,9 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Participants Snapshot 1`] = `
-.emotion-2 {
+.emotion-3 {
   width: 100%;
+  height: calc(100vh - 240px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-2 {
+  height: 100%;
   padding: 0 30px;
+  overflow: auto;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .emotion-0 {
@@ -23,9 +40,11 @@ exports[`renders Participants Snapshot 1`] = `
 }
 
 <section
-  className="emotion-2"
+  className="emotion-3"
 >
-  <div>
+  <div
+    className="emotion-2"
+  >
     <div
       className="emotion-0"
     >

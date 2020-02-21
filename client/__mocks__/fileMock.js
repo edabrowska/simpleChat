@@ -36,5 +36,8 @@ export default {
       name: "michel sagan",
       id: "890b-0d76"
     }
+  },
+  error: {
+    text: ''
   }
 }

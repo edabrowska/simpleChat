@@ -20,10 +20,6 @@ exports[`renders ChatMessage Snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   margin: 11px 0 5px;
 }
 
@@ -35,6 +31,13 @@ exports[`renders ChatMessage Snapshot 1`] = `
   -ms-letter-spacing: 1.5px;
   letter-spacing: 1.5px;
   margin-right: 15px;
+  max-width: 280px;
+}
+
+@media (min-width:768px) {
+  .emotion-0 {
+    max-width: 435px;
+  }
 }
 
 .emotion-1 {

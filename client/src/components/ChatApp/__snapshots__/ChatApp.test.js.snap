@@ -1,16 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders ChatApp Snapshot 1`] = `
-.emotion-23 {
+.emotion-25 {
   width: 100%;
   height: 100vh;
-  overflow: auto;
+  position: relative;
 }
 
 @media (min-width:768px) {
-  .emotion-23 {
+  .emotion-25 {
     width: 720px;
-    max-height: 1800px;
   }
 }
 
@@ -36,7 +35,7 @@ exports[`renders ChatApp Snapshot 1`] = `
   text-transform: capitalize;
 }
 
-.emotion-22 {
+.emotion-24 {
   width: 100%;
 }
 
@@ -122,15 +121,32 @@ exports[`renders ChatApp Snapshot 1`] = `
   opacity: .9;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: none;
   display: block;
   width: 100%;
 }
 
-.emotion-6 {
+.emotion-7 {
   width: 100%;
+  height: calc(100vh - 240px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-6 {
+  height: 100%;
   padding: 0 30px;
+  overflow: auto;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .emotion-4 {
@@ -149,37 +165,33 @@ exports[`renders ChatApp Snapshot 1`] = `
   text-transform: capitalize;
 }
 
-.emotion-21 {
+.emotion-23 {
   display: none;
 }
 
-.emotion-12 {
+.emotion-13 {
   position: relative;
   padding-left: 17px;
   padding-bottom: 17px;
 }
 
-.emotion-12:first-of-type {
+.emotion-13:first-of-type {
   margin-top: 25px;
 }
 
-.emotion-12:hover button {
+.emotion-13:hover button {
   display: inline-block;
 }
 
-.emotion-10 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   margin: 11px 0 5px;
 }
 
-.emotion-8 {
+.emotion-9 {
   font-weight: bold;
   text-transform: capitalize;
   -webkit-letter-spacing: 1.5px;
@@ -187,13 +199,20 @@ exports[`renders ChatApp Snapshot 1`] = `
   -ms-letter-spacing: 1.5px;
   letter-spacing: 1.5px;
   margin-right: 15px;
+  max-width: 280px;
 }
 
-.emotion-9 {
+@media (min-width:768px) {
+  .emotion-9 {
+    max-width: 435px;
+  }
+}
+
+.emotion-10 {
   color: #979c9f;
 }
 
-.emotion-11 {
+.emotion-12 {
   -webkit-letter-spacing: 1.4px;
   -moz-letter-spacing: 1.4px;
   -ms-letter-spacing: 1.4px;
@@ -201,12 +220,15 @@ exports[`renders ChatApp Snapshot 1`] = `
   line-height: 1.6;
 }
 
-.emotion-19 {
+.emotion-21 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   width: 100%;
-  padding: 15px 0;
+  padding: 15px 30px;
 }
 
-.emotion-18 {
+.emotion-20 {
   width: 100%;
   padding: 27px 33px;
   -webkit-letter-spacing: 2px;
@@ -217,20 +239,21 @@ exports[`renders ChatApp Snapshot 1`] = `
   border-radius: 9px;
 }
 
-.emotion-18:placeholder {
+.emotion-20:placeholder {
   color: #979c9f;
 }
 
 <div
-  className="emotion-23"
+  className="emotion-25"
 >
+  
   <header
     className="emotion-0"
   >
     Status meeting standup
   </header>
   <section
-    className="emotion-22"
+    className="emotion-24"
   >
     <div
       className="emotion-3"
@@ -252,12 +275,14 @@ exports[`renders ChatApp Snapshot 1`] = `
     </div>
     <div>
       <div
-        className="emotion-7"
+        className="emotion-8"
       >
         <section
-          className="emotion-6"
+          className="emotion-7"
         >
-          <div>
+          <div
+            className="emotion-6"
+          >
             <div
               className="emotion-4"
             >
@@ -276,57 +301,59 @@ exports[`renders ChatApp Snapshot 1`] = `
         </section>
       </div>
       <div
-        className="emotion-21"
+        className="emotion-23"
       >
         <section
-          className="emotion-6"
+          className="emotion-7"
         >
-          <div>
+          <div
+            className="emotion-6"
+          >
             <div
-              className="emotion-12"
+              className="emotion-13"
             >
               <div
-                className="emotion-10"
+                className="emotion-11"
               >
                 <p
-                  className="emotion-8"
+                  className="emotion-9"
                 >
                   Jane Downey
                 </p>
                  
                 <span
-                  className="emotion-9"
+                  className="emotion-10"
                 >
                   12:58:24 
                 </span>
               </div>
               <p
-                className="emotion-11"
+                className="emotion-12"
                 type="msgevent"
               >
                 After losing his wife seven years earlier, the eccentric Dr. John Dolittle, famed doctor and veterinarian of Queen Victoria’s England, hermits himself away behind the high walls of Dolittle Manor with only his menagerie of exotic animals for company.
               </p>
             </div>
             <div
-              className="emotion-12"
+              className="emotion-13"
             >
               <div
-                className="emotion-10"
+                className="emotion-11"
               >
                 <p
-                  className="emotion-8"
+                  className="emotion-9"
                 >
                   Jane Downey
                 </p>
                  
                 <span
-                  className="emotion-9"
+                  className="emotion-10"
                 >
                   12:59:54 
                 </span>
               </div>
               <p
-                className="emotion-11"
+                className="emotion-12"
                 type="msgevent"
               >
                 But when the young queen falls gravely ill, a reluctant Dolittle is forced to set sail on an epic adventure to a mythical island in search of a cure, regaining his wit and courage as he crosses old adversaries and discovers wondrous creatures.
@@ -334,11 +361,11 @@ exports[`renders ChatApp Snapshot 1`] = `
             </div>
           </div>
           <form
-            className="emotion-19"
+            className="emotion-21"
             onSubmit={[Function]}
           >
             <input
-              className="emotion-18"
+              className="emotion-20"
               id="message"
               onChange={[Function]}
               placeholder="Message"

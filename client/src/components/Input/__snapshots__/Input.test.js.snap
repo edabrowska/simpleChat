@@ -2,8 +2,11 @@
 
 exports[`renders Input Snapshot 1`] = `
 .emotion-1 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   width: 100%;
-  padding: 15px 0;
+  padding: 15px 30px;
 }
 
 .emotion-0 {

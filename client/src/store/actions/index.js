@@ -3,6 +3,7 @@ import {
   ADD_MESSAGE,
   UPDATE_MESSAGE,
   ADD_USER,
+  SHOW_ERROR
 } from '../consts'
 
 export const addParticipant = (payload) => {
@@ -29,6 +30,13 @@ export const addUser = (payload) => {
 export const updateMessage = (payload) => {
   return {
     type: UPDATE_MESSAGE,
+    payload
+  }
+}
+
+export const showError = (payload) => {
+  return {
+    type: SHOW_ERROR,
     payload
   }
 }

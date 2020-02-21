@@ -15,23 +15,15 @@ expect.addSnapshotSerializer(serializer)
 describe('renders ChatMessage', () => {
   it('Snapshot', () => {
     const mockStore = configureStore()
-    const mockData = {
-      name: initialState.messages.messagesList[0].name,
-      text: initialState.messages.messagesList[0].message,
-      date: initialState.messages.messagesList[0].date,
-      type: initialState.messages.messagesList[0].type
-    }
+    const mockData = initialState.messages.messagesList[0]
 
     const component = renderer.create(
       <Provider store={mockStore(initialState)}>
         <ThemeProvider theme={theme}>
           <ChatMessage
-            name={mockData.name}
-            text={mockData.text}
-            date={mockData.date}
+            messageInfo={mockData}
             isUser={initialState.user.details.name === mockData.name}
             removeMessage={() => { }}
-            type={mockData.type}
             editMessage={() => { }}
           />
         </ThemeProvider>

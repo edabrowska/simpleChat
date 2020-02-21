@@ -1,9 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Messages Snapshot 1`] = `
-.emotion-12 {
+.emotion-13 {
   width: 100%;
+  height: calc(100vh - 240px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-10 {
+  height: 100%;
   padding: 0 30px;
+  overflow: auto;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .emotion-4 {
@@ -25,10 +42,6 @@ exports[`renders Messages Snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   margin: 11px 0 5px;
 }
 
@@ -40,6 +53,13 @@ exports[`renders Messages Snapshot 1`] = `
   -ms-letter-spacing: 1.5px;
   letter-spacing: 1.5px;
   margin-right: 15px;
+  max-width: 280px;
+}
+
+@media (min-width:768px) {
+  .emotion-0 {
+    max-width: 435px;
+  }
 }
 
 .emotion-1 {
@@ -54,12 +74,15 @@ exports[`renders Messages Snapshot 1`] = `
   line-height: 1.6;
 }
 
-.emotion-11 {
+.emotion-12 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   width: 100%;
-  padding: 15px 0;
+  padding: 15px 30px;
 }
 
-.emotion-10 {
+.emotion-11 {
   width: 100%;
   padding: 27px 33px;
   -webkit-letter-spacing: 2px;
@@ -70,14 +93,16 @@ exports[`renders Messages Snapshot 1`] = `
   border-radius: 9px;
 }
 
-.emotion-10:placeholder {
+.emotion-11:placeholder {
   color: #979c9f;
 }
 
 <section
-  className="emotion-12"
+  className="emotion-13"
 >
-  <div>
+  <div
+    className="emotion-10"
+  >
     <div
       className="emotion-4"
     >
@@ -130,11 +155,11 @@ exports[`renders Messages Snapshot 1`] = `
     </div>
   </div>
   <form
-    className="emotion-11"
+    className="emotion-12"
     onSubmit={[Function]}
   >
     <input
-      className="emotion-10"
+      className="emotion-11"
       id="message"
       onChange={[Function]}
       placeholder="Message"

@@ -21,9 +21,13 @@ export const ChatMessageRoot = styled.div`
 
 export const Controls = styled.div`
   position: absolute;
-  top: 0;
+  top: -5px;
   right: 0px;
   font-size: 2rem;
+
+  @media (min-width: 768px) {
+    top: 3px;
+  }
 `
 
 const Button = styled.button`
@@ -51,7 +55,6 @@ export const DeleteButton = styled(Button)`
 
 export const Header = styled.div`
   display: flex;
-  align-items: center;
   margin: 11px 0 5px;
 `
 
@@ -60,6 +63,11 @@ export const Name = styled.p`
   text-transform: capitalize;
   letter-spacing: 1.5px;
   margin-right: 15px;
+  max-width: 280px;
+
+  @media (min-width: 768px) {
+    max-width: 435px;
+  }
 `
 
 export const Date = styled.span`

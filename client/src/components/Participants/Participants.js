@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import { ParticipantsRoot, ParticipantTile } from './Participants.shards'
+import {
+  ParticipantsRoot,
+  ParticipantTile,
+  ParticipantsWrapper
+} from './Participants.shards'
 
 import Input from '../Input/Input'
 
@@ -24,12 +28,10 @@ const ConnectedParticipants = ({
 
   useEffect(() => {
     ws.onopen = () => {
-      // on connecting, do nothing but log it to the console
       console.log('connected participant')
     }
 
     ws.onmessage = evt => {
-      // on receiving a message, add it to the list of messages
       const socketData = JSON.parse(evt.data)
 
       if (socketData.type === EVENT_TYPE.USER_EVENT) {
@@ -38,9 +40,7 @@ const ConnectedParticipants = ({
     }
 
     ws.onclose = () => {
-      console.log('disconnected participant')
-      // automatically try to reconnect on connection loss
-      // ws = new WebSocket(URL)
+      console.log('disconnected')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -68,13 +68,13 @@ const ConnectedParticipants = ({
   }
 
   return <ParticipantsRoot>
-    <div>
+    <ParticipantsWrapper>
       {getParticipants.map(participant => <ParticipantTile
         key={participant.id}
       >
         <p>{participant.name}</p>
       </ParticipantTile>)}
-    </div>
+    </ParticipantsWrapper>
     {!getUser.name && <Input
       handleSubmit={handleSubmit}
       id='name'

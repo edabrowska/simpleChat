@@ -1,8 +1,9 @@
 import styled from '@emotion/styled'
 
 export const RootForm = styled.form`
+  flex-shrink: 0;
   width: 100%;
-  padding: 15px 0;
+  padding: 15px 30px;
 `
 
 export const StyledInput = styled.input`

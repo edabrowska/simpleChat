@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import { MessagesRoot } from './Messages.shards'
+import { MessagesRoot, MessagesWrapper } from './Messages.shards'
 
 import ChatMessage from '../ChatMessage/ChatMessage'
 import Input from '../Input/Input'
 
-import { addMessage, updateMessage } from '../../store/actions'
+import { addMessage, updateMessage, showError } from '../../store/actions'
 
 import { messageID, getMsgHour } from '../../utils/helpers'
 import { URL, EVENT_TYPE } from '../../utils/consts.js'
@@ -16,6 +16,7 @@ const ConnectedMessages = ({
   getMessages,
   addMessage,
   updateMessage,
+  showError
 }) => {
   const [text, setText] = useState({
     name: '',
@@ -28,38 +29,38 @@ const ConnectedMessages = ({
 
   useEffect(() => {
     wsMsg.onopen = () => {
-      // on connecting, do nothing but log it to the console
       console.log('connected')
     }
 
     wsMsg.onmessage = evt => {
-      // on receiving a message, add it to the list of messages
       const socketData = JSON.parse(evt.data)
 
-      if (socketData.type === EVENT_TYPE.MESSAGE_EVENT) {
-        addMessage(socketData)
-      }
+      switch (socketData.type) {
+        case EVENT_TYPE.MESSAGE_EVENT:
+          return addMessage(socketData)
 
-      if (socketData.type === EVENT_TYPE.MESSAGE_REMOVE) {
-        updateMessage({
-          ...socketData,
-          message: 'Message removed',
-          type: EVENT_TYPE.MESSAGE_REMOVE
-        })
-      }
+        case EVENT_TYPE.MESSAGE_REMOVE:
+          return updateMessage({
+            ...socketData,
+            message: 'Message removed',
+            type: EVENT_TYPE.MESSAGE_REMOVE
+          })
 
-      if (socketData.type === EVENT_TYPE.MESSAGE_EDIT) {
-        updateMessage({
-          ...socketData,
-          type: EVENT_TYPE.MESSAGE_EDIT
-        })
+        case EVENT_TYPE.MESSAGE_EDIT:
+          return updateMessage({
+            ...socketData,
+            type: EVENT_TYPE.MESSAGE_EDIT
+          })
+
+        default:
+          return null
       }
     }
 
     wsMsg.onclose = () => {
-      console.log('disconnected')
-      // automatically try to reconnect on connection loss
-      // wsMsg = new WebSocket(URL)
+      if (wsMsg.readyState === 3) {
+        showError('WEBSOCKET DISCONNECTED')
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -117,18 +118,15 @@ const ConnectedMessages = ({
   }
 
   return <MessagesRoot>
-    <div>
+    <MessagesWrapper>
       {getMessages.map(data => <ChatMessage
         key={data.id}
-        text={data.message}
-        name={data.name}
-        date={data.date}
+        messageInfo={data}
         isUser={getUser.name === data.name}
         removeMessage={() => handleRemoveMessage(data)}
-        type={data.type}
         editMessage={() => handleEditMessage(data)}
       />)}
-    </div>
+    </MessagesWrapper>
     <Input
       handleSubmit={handleSubmit}
       placeholder='Message'
@@ -146,6 +144,7 @@ const Messages = connect(
   dispatch => ({
     addMessage: (text) => dispatch(addMessage(text)),
     updateMessage: (id) => dispatch(updateMessage(id)),
+    showError: (text) => dispatch(showError(text))
   })
 )(ConnectedMessages)
 
